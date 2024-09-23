@@ -71,12 +71,13 @@ console.log(
   Input: John Doe
   Output: JD
 */
-const printInitialName = (name: string): string => {
-  const nameArray: string[] = name.split(" ");
+const printInitialName = (fullName: string): string => {
+  const nameArray: string[] = fullName.split(" ");
 
   // for debugging only will delete later
   console.log(nameArray);
 
+  // get each index value first character
   const getInitials = nameArray
     .map((name) => name.charAt(0).toUpperCase())
     .join("");
@@ -84,6 +85,22 @@ const printInitialName = (name: string): string => {
   return getInitials;
 };
 
-const myName = "Muhammad Dede Alfaruq";
-const myInitial = printInitialName(myName);
-console.log(`Initial name : ${myInitial}`);
+// normal function
+function printInitial(fullName: string): string {
+  const nameArray: string[] = fullName.split(" ");
+
+  // for debugging only will delete later
+  console.log(nameArray);
+
+  // get each index value first character
+  const getInitials = nameArray
+    .map((name) => name.charAt(0).toUpperCase())
+    .join("");
+
+  return getInitials;
+}
+
+const fullName: string = "Muhammad Dede Alfaruq";
+const initialName: string = printInitialName(fullName);
+console.log(`Full name : ${fullName}`);
+console.log(`Initial name : ${initialName}`);
